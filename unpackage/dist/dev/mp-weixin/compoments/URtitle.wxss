@@ -1,0 +1,11 @@
+
+.card-head{
+		height: 80rpx;
+		line-height: 80rpx;
+		text-align: center;
+		width:100%;
+		font-size: 16px;
+		font-weight: bold;
+		background-color:white;
+}
+

@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "home",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-tabs": "/node-modules/uview-ui/components/u-tabs/u-tabs",
+    "u-rbanner": "/compoments/URbanner",
+    "u-rsearch": "/compoments/URsearch",
+    "u-rgrid": "/compoments/URgrid",
+    "u-rtabs-swiper": "/compoments/URtabsSwiper",
+    "u-rpopup": "/compoments/URpopup",
+    "u-rscroll-y": "/compoments/URscrollY",
+    "u-rtitle": "/compoments/URtitle",
+    "u-rxd": "/compoments/URxd"
+  }
+}

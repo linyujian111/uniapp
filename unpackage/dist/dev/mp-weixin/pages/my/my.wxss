@@ -1,0 +1,8 @@
+
+.swiperTabs.data-v-0be17cc6{
+	height: 100vh;
+	width: 100%;
+	background-color: red;
+	overflow:auto;
+}
+

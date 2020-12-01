@@ -1,0 +1,31 @@
+
+.full{
+	width: 750rpx;
+	margin: 0;
+	padding: 0;
+}
+.sticky-box {
+
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	position: -webkit-sticky;
+
+	position: sticky;
+	top: 0px;
+	z-index: 99;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	margin: 0px;
+	padding: 15px 0 15px 0;
+	background-color: #F4F5F6;
+	border-bottom-style: solid;
+	border-bottom-color: #E2E2E2;
+}
+.textcenter{
+	text-align: center;
+	font-size: 18px;
+}
+

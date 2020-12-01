@@ -1,0 +1,56 @@
+
+.scroll-Y {
+	width: 100%;
+	white-space: nowrap;
+}
+.card{
+	display: inline-block;
+	margin-left: 20rpx;
+}
+.card-box{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+}
+.card-img{
+	width:200rpx;
+	height:270rpx;
+}
+.card-name{
+	width:200rpx;
+	margin-top: 10rpx;
+	font-size: 14px;
+	font-weight: bold;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.card-star{
+	margin-top: 6rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+
+	-webkit-box-align: center;
+
+	-webkit-align-items: center;
+
+	        align-items: center;
+}
+.card-star-img{
+	width: 20rpx;
+	height: 20rpx;
+	margin-left: 3rpx;
+}
+.card-star-score{
+	margin-left: 8rpx;
+	color: gray;
+}
+
