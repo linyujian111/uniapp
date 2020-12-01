@@ -19,10 +19,6 @@
 					</view>
 				</view>
 			</view>
-			
-			
-		
-			
 		</scroll-view>
 	</view>
 </template>
@@ -72,7 +68,8 @@
 	}
 	.card{
 		display: inline-block;
-		margin-left: 20upx;
+		margin-right: 20upx;
+		
 	}
 	.card-box{
 		display: flex;
@@ -81,6 +78,7 @@
 	.card-img{
 		width:200upx;
 		height:270upx;
+		border-radius: 10upx;
 	}
 	
 	.card-name{

@@ -1,1 +1,0 @@
-<view class="search data-v-1f38e3be"><uni-search-bar class="uni-search-bar data-v-1f38e3be" bind:confirm="__e" bind:input="__e" vue-id="1c0eb705-1" data-event-opts="{{[['^confirm',[['search']]],['^input',[['input']]]]}}" bind:__l="__l"></uni-search-bar></view>

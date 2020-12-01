@@ -1,6 +1,6 @@
-(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],{
-
-/***/ 1:
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],[
+/* 0 */,
+/* 1 */
 /*!************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js ***!
   \************************************************************/
@@ -1805,687 +1805,7 @@ var uni$1 = uni;var _default =
 uni$1;exports.default = _default;
 
 /***/ }),
-
-/***/ 10:
-/*!************************************!*\
-  !*** D:/UR/uniapp/uni-app/.env.js ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {;
-(function () {
-  var NODE_ENV = 'dev'; // dev:开发环境 | test:测试环境
-  var ENV_VAR = null;
-
-
-  if (true) {
-    if (NODE_ENV === 'dev') {
-      ENV_VAR = __webpack_require__(/*! .env.dev.js */ 11);
-    } else if (NODE_ENV === 'test') {
-
-    }
-  } else {}
-  if (ENV_VAR) {
-    process.uniEnv = {};
-    for (var key in ENV_VAR) {
-      process.uniEnv[key] = ENV_VAR[key];
-    }
-  }
-})();
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../HBuilderX.2.9.8.20201110.full/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 8)))
-
-/***/ }),
-
-/***/ 11:
-/*!****************************************!*\
-  !*** D:/UR/uniapp/uni-app/.env.dev.js ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var UNI_APP = {
-  BASE_API: ' https://www.easy-mock.com/mock/5ed886f78afb710bec775060/shop' };
-
-module.exports = UNI_APP;
-
-/***/ }),
-
-/***/ 14:
-/*!**********************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js ***!
-  \**********************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-function normalizeComponent (
-  scriptExports,
-  render,
-  staticRenderFns,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier, /* server only */
-  shadowMode, /* vue-cli only */
-  components, // fixed by xxxxxx auto components
-  renderjs // fixed by xxxxxx renderjs
-) {
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // fixed by xxxxxx auto components
-  if (components) {
-    if (!options.components) {
-      options.components = {}
-    }
-    var hasOwn = Object.prototype.hasOwnProperty
-    for (var name in components) {
-      if (hasOwn.call(components, name) && !hasOwn.call(options.components, name)) {
-        options.components[name] = components[name]
-      }
-    }
-  }
-  // fixed by xxxxxx renderjs
-  if (renderjs) {
-    (renderjs.beforeCreate || (renderjs.beforeCreate = [])).unshift(function() {
-      this[renderjs.__module] = this
-    });
-    (options.mixins || (options.mixins = [])).push(renderjs)
-  }
-
-  // render functions
-  if (render) {
-    options.render = render
-    options.staticRenderFns = staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = 'data-v-' + scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = shadowMode
-      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
-      : injectStyles
-  }
-
-  if (hook) {
-    if (options.functional) {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      var originalRender = options.render
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return originalRender(h, context)
-      }
-    } else {
-      // inject component registration as beforeCreate hook
-      var existing = options.beforeCreate
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    }
-  }
-
-  return {
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-
-/***/ 15:
-/*!***************************************!*\
-  !*** D:/UR/uniapp/uni-app/api/api.js ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process, uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.myHttp = void 0;function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;} // 全局请求路径，也就是后端的请求基准路径
-var BASE_URL = process.uniEnv.BASE_API;
-
-// 同时发送异步代码的次数，防止一次点击中有多次请求，用于处理
-var ajaxTimes = 0;
-
-// 封装请求方法，并向外暴露该方法
-var myHttp = function myHttp(options) {
-  // 解构请求头参数
-
-  var header = _objectSpread({}, options.header);
-
-
-  // 当前请求不是登录时请求，在header中加上后端返回的token
-  if (options.url != 'login') {
-    header["client-identity"] = uni.getStorageSync('session_id');
-  }
-
-  ajaxTimes++;
-  // 显示加载中 效果
-  // uni.showLoading({
-  // 	title: "加载中",
-  //     mask: true,
-  // });
-
-  return new Promise(function (resolve, reject) {
-    uni.request({
-      url: BASE_URL + options.url,
-      method: options.method || 'POST',
-      data: options.data || {},
-      header: header,
-      // 成功回调
-      success: function success(res) {
-        if (res.statusCode == "404") {
-          return uni.showLoading({ title: "404", mask: true });
-        }
-        resolve(res);
-      },
-      // 失败回调
-      fail: function fail(err) {
-        reject(err);
-      },
-
-      // 完成之后关闭加载效果
-      complete: function complete() {
-        console.log('complete');
-
-        ajaxTimes--;
-        if (ajaxTimes === 0) {
-          //  关闭正在等待的图标
-          setTimeout(function () {
-            uni.hideLoading();
-          }, 3000);
-
-        }
-      } });
-
-  });
-};exports.myHttp = myHttp;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../HBuilderX.2.9.8.20201110.full/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 8), __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 16:
-/*!***********************************************************!*\
-  !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/index.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
-var _mixin = _interopRequireDefault(__webpack_require__(/*! ./libs/mixin/mixin.js */ 17));
-
-
-
-var _request = _interopRequireDefault(__webpack_require__(/*! ./libs/request */ 18));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var _queryParams = _interopRequireDefault(__webpack_require__(/*! ./libs/function/queryParams.js */ 22));
-
-var _route = _interopRequireDefault(__webpack_require__(/*! ./libs/function/route.js */ 23));
-
-var _timeFormat = _interopRequireDefault(__webpack_require__(/*! ./libs/function/timeFormat.js */ 27));
-
-var _timeFrom = _interopRequireDefault(__webpack_require__(/*! ./libs/function/timeFrom.js */ 28));
-
-var _colorGradient = _interopRequireDefault(__webpack_require__(/*! ./libs/function/colorGradient.js */ 29));
-
-var _guid = _interopRequireDefault(__webpack_require__(/*! ./libs/function/guid.js */ 30));
-
-var _color = _interopRequireDefault(__webpack_require__(/*! ./libs/function/color.js */ 31));
-
-var _type2icon = _interopRequireDefault(__webpack_require__(/*! ./libs/function/type2icon.js */ 32));
-
-var _randomArray = _interopRequireDefault(__webpack_require__(/*! ./libs/function/randomArray.js */ 33));
-
-var _deepClone = _interopRequireDefault(__webpack_require__(/*! ./libs/function/deepClone.js */ 20));
-
-var _deepMerge = _interopRequireDefault(__webpack_require__(/*! ./libs/function/deepMerge.js */ 19));
-
-var _addUnit = _interopRequireDefault(__webpack_require__(/*! ./libs/function/addUnit.js */ 34));
-
-
-var _test = _interopRequireDefault(__webpack_require__(/*! ./libs/function/test.js */ 21));
-
-var _random = _interopRequireDefault(__webpack_require__(/*! ./libs/function/random.js */ 35));
-
-var _trim = _interopRequireDefault(__webpack_require__(/*! ./libs/function/trim.js */ 36));
-
-var _toast = _interopRequireDefault(__webpack_require__(/*! ./libs/function/toast.js */ 37));
-
-var _getParent = _interopRequireDefault(__webpack_require__(/*! ./libs/function/getParent.js */ 38));
-
-var _$parent = _interopRequireDefault(__webpack_require__(/*! ./libs/function/$parent.js */ 39));
-
-
-
-var _sys = __webpack_require__(/*! ./libs/function/sys.js */ 40);
-
-var _debounce = _interopRequireDefault(__webpack_require__(/*! ./libs/function/debounce.js */ 41));
-
-var _throttle = _interopRequireDefault(__webpack_require__(/*! ./libs/function/throttle.js */ 42));
-
-
-
-var _config = _interopRequireDefault(__webpack_require__(/*! ./libs/config/config.js */ 43));
-
-var _zIndex = _interopRequireDefault(__webpack_require__(/*! ./libs/config/zIndex.js */ 44));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // 引入全局mixin
-// 引入关于是否mixin集成小程序分享的配置
-// import wxshare from './libs/mixin/mpShare.js'
-// 全局挂载引入http相关请求拦截插件
-function wranning(str) {// 开发环境进行信息输出,主要是一些报错信息
-  // 这个环境的来由是在程序编写时候,点击hx编辑器运行调试代码的时候,详见:
-  // 	https://uniapp.dcloud.io/frame?id=%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e5%92%8c%e7%94%9f%e4%ba%a7%e7%8e%af%e5%a2%83
-  if (true) {console.warn(str);}} // 尝试判断在根目录的/store中是否有$u.mixin.js，此文件uView默认为需要挂在到全局的vuex的state变量
-// HX2.6.11版本,放到try中,控制台依然会警告,暂时不用此方式，
-// let vuexStore = {};
-// try {
-// 	vuexStore = require("@/store/$u.mixin.js");
-// } catch (e) {
-// 	//TODO handle the exception
-// }
-// post类型对象参数转为get类型url参数
-var $u = { queryParams: _queryParams.default, route: _route.default, timeFormat: _timeFormat.default, date: _timeFormat.default, // 另名date
-  timeFrom: _timeFrom.default, colorGradient: _colorGradient.default.colorGradient, colorToRgba: _colorGradient.default.colorToRgba, guid: _guid.default, color: _color.default, sys: _sys.sys, os: _sys.os, type2icon: _type2icon.default, randomArray: _randomArray.default, wranning: wranning, get: _request.default.get,
-  post: _request.default.post,
-  put: _request.default.put,
-  'delete': _request.default.delete,
-  hexToRgb: _colorGradient.default.hexToRgb,
-  rgbToHex: _colorGradient.default.rgbToHex,
-  test: _test.default,
-  random: _random.default,
-  deepClone: _deepClone.default,
-  deepMerge: _deepMerge.default,
-  getParent: _getParent.default,
-  $parent: _$parent.default,
-  addUnit: _addUnit.default,
-  trim: _trim.default,
-  type: ['primary', 'success', 'error', 'warning', 'info'],
-  http: _request.default,
-  toast: _toast.default,
-  config: _config.default, // uView配置信息相关，比如版本号
-  zIndex: _zIndex.default,
-  debounce: _debounce.default,
-  throttle: _throttle.default };
-
-
-// $u挂载到uni对象上
-uni.$u = $u;
-
-var install = function install(Vue) {
-  Vue.mixin(_mixin.default);
-  if (Vue.prototype.openShare) {
-    Vue.mixin(mpShare);
-  }
-  // Vue.mixin(vuexStore);
-  // 时间格式化，同时两个名称，date和timeFormat
-  Vue.filter('timeFormat', function (timestamp, format) {
-    return (0, _timeFormat.default)(timestamp, format);
-  });
-  Vue.filter('date', function (timestamp, format) {
-    return (0, _timeFormat.default)(timestamp, format);
-  });
-  // 将多久以前的方法，注入到全局过滤器
-  Vue.filter('timeFrom', function (timestamp, format) {
-    return (0, _timeFrom.default)(timestamp, format);
-  });
-  Vue.prototype.$u = $u;
-};var _default =
-
-{
-  install: install };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 17:
-/*!**********************************************************************!*\
-  !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/mixin/mixin.js ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(uni) {module.exports = {
-  data: function data() {
-    return {};
-  },
-  onLoad: function onLoad() {
-    // getRect挂载到$u上，因为这方法需要使用in(this)，所以无法把它独立成一个单独的文件导出
-    this.$u.getRect = this.$uGetRect;
-  },
-  methods: {
-    // 查询节点信息
-    // 目前此方法在支付宝小程序中无法获取组件跟接点的尺寸，为支付宝的bug(2020-07-21)
-    // 解决办法为在组件根部再套一个没有任何作用的view元素
-    $uGetRect: function $uGetRect(selector, all) {var _this = this;
-      return new Promise(function (resolve) {
-        uni.createSelectorQuery().
-        in(_this)[all ? 'selectAll' : 'select'](selector).
-        boundingClientRect(function (rect) {
-          if (all && Array.isArray(rect) && rect.length) {
-            resolve(rect);
-          }
-          if (!all && rect) {
-            resolve(rect);
-          }
-        }).
-        exec();
-      });
-    },
-    getParentData: function getParentData() {var _this2 = this;var parentName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-      // 避免在created中去定义parent变量
-      if (!this.parent) this.parent = false;
-      // 这里的本质原理是，通过获取父组件实例(也即u-radio-group的this)
-      // 将父组件this中对应的参数，赋值给本组件(u-radio的this)的parentData对象中对应的属性
-      // 之所以需要这么做，是因为所有端中，头条小程序不支持通过this.parent.xxx去监听父组件参数的变化
-      this.parent = this.$u.$parent.call(this, parentName);
-      if (this.parent) {
-        // 历遍parentData中的属性，将parent中的同名属性赋值给parentData
-        Object.keys(this.parentData).map(function (key) {
-          _this2.parentData[key] = _this2.parent[key];
-        });
-      }
-    },
-    // 阻止事件冒泡
-    preventEvent: function preventEvent(e) {
-      e && e.stopPropagation && e.stopPropagation();
-    } },
-
-  onReachBottom: function onReachBottom() {
-    uni.$emit('uOnReachBottom');
-  } };
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 18:
-/*!************************************************************************!*\
-  !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/request/index.js ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _deepMerge = _interopRequireDefault(__webpack_require__(/*! ../function/deepMerge */ 19));
-var _test = _interopRequireDefault(__webpack_require__(/*! ../function/test */ 21));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var
-Request = /*#__PURE__*/function () {_createClass(Request, [{ key: "setConfig",
-    // 设置全局默认配置
-    value: function setConfig(customConfig) {
-      // 深度合并对象，否则会造成对象深层属性丢失
-      this.config = (0, _deepMerge.default)(this.config, customConfig);
-    }
-
-    // 主要请求部分
-  }, { key: "request", value: function request() {var _this = this;var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-      // 检查请求拦截
-      if (this.interceptor.request && typeof this.interceptor.request === 'function') {
-        var tmpConfig = {};
-        var interceptorRequest = this.interceptor.request(options);
-        if (interceptorRequest === false) {
-          // 返回一个处于pending状态中的Promise，来取消原promise，避免进入then()回调
-          return new Promise(function () {});
-        }
-        this.options = interceptorRequest;
-      }
-      options.dataType = options.dataType || this.config.dataType;
-      options.responseType = options.responseType || this.config.responseType;
-      options.url = options.url || '';
-      options.params = options.params || {};
-      options.header = Object.assign(this.config.header, options.header);
-      options.method = options.method || this.config.method;
-
-      return new Promise(function (resolve, reject) {
-        options.complete = function (response) {
-          // 请求返回后，隐藏loading(如果请求返回快的话，可能会没有loading)
-          uni.hideLoading();
-          // 清除定时器，如果请求回来了，就无需loading
-          clearTimeout(_this.config.timer);
-          _this.config.timer = null;
-          // 判断用户对拦截返回数据的要求，如果originalData为true，返回所有的数据(response)到拦截器，否则只返回response.data
-          if (_this.config.originalData) {
-            // 判断是否存在拦截器
-            if (_this.interceptor.response && typeof _this.interceptor.response === 'function') {
-              var resInterceptors = _this.interceptor.response(response);
-              // 如果拦截器不返回false，就将拦截器返回的内容给this.$u.post的then回调
-              if (resInterceptors !== false) {
-                resolve(resInterceptors);
-              } else {
-                // 如果拦截器返回false，意味着拦截器定义者认为返回有问题，直接接入catch回调
-                reject(response);
-              }
-            } else {
-              // 如果要求返回原始数据，就算没有拦截器，也返回最原始的数据
-              resolve(response);
-            }
-          } else {
-            if (response.statusCode == 200) {
-              if (_this.interceptor.response && typeof _this.interceptor.response === 'function') {
-                var _resInterceptors = _this.interceptor.response(response.data);
-                if (_resInterceptors !== false) {
-                  resolve(_resInterceptors);
-                } else {
-                  reject(response.data);
-                }
-              } else {
-                // 如果不是返回原始数据(originalData=false)，且没有拦截器的情况下，返回纯数据给then回调
-                resolve(response.data);
-              }
-            } else {
-              // 不返回原始数据的情况下，服务器状态码不为200，modal弹框提示
-              // if(response.errMsg) {
-              // 	uni.showModal({
-              // 		title: response.errMsg
-              // 	});
-              // }
-              reject(response);
-            }
-          }
-        };
-
-        // 判断用户传递的URL是否/开头,如果不是,加上/，这里使用了uView的test.js验证库的url()方法
-        options.url = _test.default.url(options.url) ? options.url : _this.config.baseUrl + (options.url.indexOf('/') == 0 ?
-        options.url : '/' + options.url);
-
-        // 是否显示loading
-        // 加一个是否已有timer定时器的判断，否则有两个同时请求的时候，后者会清除前者的定时器id
-        // 而没有清除前者的定时器，导致前者超时，一直显示loading
-        if (_this.config.showLoading && !_this.config.timer) {
-          _this.config.timer = setTimeout(function () {
-            uni.showLoading({
-              title: _this.config.loadingText,
-              mask: _this.config.loadingMask });
-
-            _this.config.timer = null;
-          }, _this.config.loadingTime);
-        }
-        uni.request(options);
-      });
-      // .catch(res => {
-      // 	// 如果返回reject()，不让其进入this.$u.post().then().catch()后面的catct()
-      // 	// 因为很多人都会忘了写后面的catch()，导致报错捕获不到catch
-      // 	return new Promise(()=>{});
-      // })
-    } }]);
-
-  function Request() {var _this2 = this;_classCallCheck(this, Request);
-    this.config = {
-      baseUrl: '', // 请求的根域名
-      // 默认的请求头
-      header: {},
-      method: 'POST',
-      // 设置为json，返回后uni.request会对数据进行一次JSON.parse
-      dataType: 'json',
-      // 此参数无需处理，因为5+和支付宝小程序不支持，默认为text即可
-      responseType: 'text',
-      showLoading: true, // 是否显示请求中的loading
-      loadingText: '请求中...',
-      loadingTime: 800, // 在此时间内，请求还没回来的话，就显示加载中动画，单位ms
-      timer: null, // 定时器
-      originalData: false, // 是否在拦截器中返回服务端的原始数据，见文档说明
-      loadingMask: true // 展示loading的时候，是否给一个透明的蒙层，防止触摸穿透
-    };
-
-    // 拦截器
-    this.interceptor = {
-      // 请求前的拦截
-      request: null,
-      // 请求后的拦截
-      response: null };
-
-
-    // get请求
-    this.get = function (url) {var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var header = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-      return _this2.request({
-        method: 'GET',
-        url: url,
-        header: header,
-        data: data });
-
-    };
-
-    // post请求
-    this.post = function (url) {var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var header = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-      return _this2.request({
-        url: url,
-        method: 'POST',
-        header: header,
-        data: data });
-
-    };
-
-    // put请求，不支持支付宝小程序(HX2.6.15)
-    this.put = function (url) {var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var header = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-      return _this2.request({
-        url: url,
-        method: 'PUT',
-        header: header,
-        data: data });
-
-    };
-
-    // delete请求，不支持支付宝和头条小程序(HX2.6.15)
-    this.delete = function (url) {var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var header = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-      return _this2.request({
-        url: url,
-        method: 'DELETE',
-        header: header,
-        data: data });
-
-    };
-  }return Request;}();var _default =
-
-new Request();exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 19:
-/*!*****************************************************************************!*\
-  !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/deepMerge.js ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _deepClone = _interopRequireDefault(__webpack_require__(/*! ./deepClone */ 20));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-// JS对象深度合并
-function deepMerge() {var target = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};var source = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  target = (0, _deepClone.default)(target);
-  if (typeof target !== 'object' || typeof source !== 'object') return false;
-  for (var prop in source) {
-    if (!source.hasOwnProperty(prop)) continue;
-    if (prop in target) {
-      if (typeof target[prop] !== 'object') {
-        target[prop] = source[prop];
-      } else {
-        if (typeof source[prop] !== 'object') {
-          target[prop] = source[prop];
-        } else {
-          if (target[prop].concat && source[prop].concat) {
-            target[prop] = target[prop].concat(source[prop]);
-          } else {
-            target[prop] = deepMerge(target[prop], source[prop]);
-          }
-        }
-      }
-    } else {
-      target[prop] = source[prop];
-    }
-  }
-  return target;
-}var _default =
-
-deepMerge;exports.default = _default;
-
-/***/ }),
-
-/***/ 2:
+/* 2 */
 /*!******************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js ***!
   \******************************************************************************************/
@@ -8531,8 +7851,1080 @@ internalMixin(Vue);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ 3)))
 
 /***/ }),
+/* 3 */
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-/***/ 20:
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 4 */
+/*!***************************************!*\
+  !*** D:/UR/uniapp/uni-app/pages.json ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */
+/*!********************************************************!*\
+  !*** ./node_modules/node-libs-browser/mock/process.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports.nextTick = function nextTick(fn) {
+    var args = Array.prototype.slice.call(arguments);
+    args.shift();
+    setTimeout(function () {
+        fn.apply(null, args);
+    }, 0);
+};
+
+exports.platform = exports.arch = 
+exports.execPath = exports.title = 'browser';
+exports.pid = 1;
+exports.browser = true;
+exports.env = {};
+exports.argv = [];
+
+exports.binding = function (name) {
+	throw new Error('No such module. (Possibly not yet loaded)')
+};
+
+(function () {
+    var cwd = '/';
+    var path;
+    exports.cwd = function () { return cwd };
+    exports.chdir = function (dir) {
+        if (!path) path = __webpack_require__(/*! path */ 9);
+        cwd = path.resolve(dir, cwd);
+    };
+})();
+
+exports.exit = exports.kill = 
+exports.umask = exports.dlopen = 
+exports.uptime = exports.memoryUsage = 
+exports.uvCounters = function() {};
+exports.features = {};
+
+
+/***/ }),
+/* 9 */
+/*!***********************************************!*\
+  !*** ./node_modules/path-browserify/index.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(process) {// .dirname, .basename, and .extname methods are extracted from Node.js v8.11.1,
+// backported and transplited with Babel, with backwards-compat fixes
+
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+// resolves . and .. elements in a path array with directory names there
+// must be no slashes, empty elements, or device names (c:\) in the array
+// (so also no leading and trailing slashes - it does not distinguish
+// relative and absolute paths)
+function normalizeArray(parts, allowAboveRoot) {
+  // if the path tries to go above the root, `up` ends up > 0
+  var up = 0;
+  for (var i = parts.length - 1; i >= 0; i--) {
+    var last = parts[i];
+    if (last === '.') {
+      parts.splice(i, 1);
+    } else if (last === '..') {
+      parts.splice(i, 1);
+      up++;
+    } else if (up) {
+      parts.splice(i, 1);
+      up--;
+    }
+  }
+
+  // if the path is allowed to go above the root, restore leading ..s
+  if (allowAboveRoot) {
+    for (; up--; up) {
+      parts.unshift('..');
+    }
+  }
+
+  return parts;
+}
+
+// path.resolve([from ...], to)
+// posix version
+exports.resolve = function() {
+  var resolvedPath = '',
+      resolvedAbsolute = false;
+
+  for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
+    var path = (i >= 0) ? arguments[i] : process.cwd();
+
+    // Skip empty and invalid entries
+    if (typeof path !== 'string') {
+      throw new TypeError('Arguments to path.resolve must be strings');
+    } else if (!path) {
+      continue;
+    }
+
+    resolvedPath = path + '/' + resolvedPath;
+    resolvedAbsolute = path.charAt(0) === '/';
+  }
+
+  // At this point the path should be resolved to a full absolute path, but
+  // handle relative paths to be safe (might happen when process.cwd() fails)
+
+  // Normalize the path
+  resolvedPath = normalizeArray(filter(resolvedPath.split('/'), function(p) {
+    return !!p;
+  }), !resolvedAbsolute).join('/');
+
+  return ((resolvedAbsolute ? '/' : '') + resolvedPath) || '.';
+};
+
+// path.normalize(path)
+// posix version
+exports.normalize = function(path) {
+  var isAbsolute = exports.isAbsolute(path),
+      trailingSlash = substr(path, -1) === '/';
+
+  // Normalize the path
+  path = normalizeArray(filter(path.split('/'), function(p) {
+    return !!p;
+  }), !isAbsolute).join('/');
+
+  if (!path && !isAbsolute) {
+    path = '.';
+  }
+  if (path && trailingSlash) {
+    path += '/';
+  }
+
+  return (isAbsolute ? '/' : '') + path;
+};
+
+// posix version
+exports.isAbsolute = function(path) {
+  return path.charAt(0) === '/';
+};
+
+// posix version
+exports.join = function() {
+  var paths = Array.prototype.slice.call(arguments, 0);
+  return exports.normalize(filter(paths, function(p, index) {
+    if (typeof p !== 'string') {
+      throw new TypeError('Arguments to path.join must be strings');
+    }
+    return p;
+  }).join('/'));
+};
+
+
+// path.relative(from, to)
+// posix version
+exports.relative = function(from, to) {
+  from = exports.resolve(from).substr(1);
+  to = exports.resolve(to).substr(1);
+
+  function trim(arr) {
+    var start = 0;
+    for (; start < arr.length; start++) {
+      if (arr[start] !== '') break;
+    }
+
+    var end = arr.length - 1;
+    for (; end >= 0; end--) {
+      if (arr[end] !== '') break;
+    }
+
+    if (start > end) return [];
+    return arr.slice(start, end - start + 1);
+  }
+
+  var fromParts = trim(from.split('/'));
+  var toParts = trim(to.split('/'));
+
+  var length = Math.min(fromParts.length, toParts.length);
+  var samePartsLength = length;
+  for (var i = 0; i < length; i++) {
+    if (fromParts[i] !== toParts[i]) {
+      samePartsLength = i;
+      break;
+    }
+  }
+
+  var outputParts = [];
+  for (var i = samePartsLength; i < fromParts.length; i++) {
+    outputParts.push('..');
+  }
+
+  outputParts = outputParts.concat(toParts.slice(samePartsLength));
+
+  return outputParts.join('/');
+};
+
+exports.sep = '/';
+exports.delimiter = ':';
+
+exports.dirname = function (path) {
+  if (typeof path !== 'string') path = path + '';
+  if (path.length === 0) return '.';
+  var code = path.charCodeAt(0);
+  var hasRoot = code === 47 /*/*/;
+  var end = -1;
+  var matchedSlash = true;
+  for (var i = path.length - 1; i >= 1; --i) {
+    code = path.charCodeAt(i);
+    if (code === 47 /*/*/) {
+        if (!matchedSlash) {
+          end = i;
+          break;
+        }
+      } else {
+      // We saw the first non-path separator
+      matchedSlash = false;
+    }
+  }
+
+  if (end === -1) return hasRoot ? '/' : '.';
+  if (hasRoot && end === 1) {
+    // return '//';
+    // Backwards-compat fix:
+    return '/';
+  }
+  return path.slice(0, end);
+};
+
+function basename(path) {
+  if (typeof path !== 'string') path = path + '';
+
+  var start = 0;
+  var end = -1;
+  var matchedSlash = true;
+  var i;
+
+  for (i = path.length - 1; i >= 0; --i) {
+    if (path.charCodeAt(i) === 47 /*/*/) {
+        // If we reached a path separator that was not part of a set of path
+        // separators at the end of the string, stop now
+        if (!matchedSlash) {
+          start = i + 1;
+          break;
+        }
+      } else if (end === -1) {
+      // We saw the first non-path separator, mark this as the end of our
+      // path component
+      matchedSlash = false;
+      end = i + 1;
+    }
+  }
+
+  if (end === -1) return '';
+  return path.slice(start, end);
+}
+
+// Uses a mixed approach for backwards-compatibility, as ext behavior changed
+// in new Node.js versions, so only basename() above is backported here
+exports.basename = function (path, ext) {
+  var f = basename(path);
+  if (ext && f.substr(-1 * ext.length) === ext) {
+    f = f.substr(0, f.length - ext.length);
+  }
+  return f;
+};
+
+exports.extname = function (path) {
+  if (typeof path !== 'string') path = path + '';
+  var startDot = -1;
+  var startPart = 0;
+  var end = -1;
+  var matchedSlash = true;
+  // Track the state of characters (if any) we see before our first dot and
+  // after any path separator we find
+  var preDotState = 0;
+  for (var i = path.length - 1; i >= 0; --i) {
+    var code = path.charCodeAt(i);
+    if (code === 47 /*/*/) {
+        // If we reached a path separator that was not part of a set of path
+        // separators at the end of the string, stop now
+        if (!matchedSlash) {
+          startPart = i + 1;
+          break;
+        }
+        continue;
+      }
+    if (end === -1) {
+      // We saw the first non-path separator, mark this as the end of our
+      // extension
+      matchedSlash = false;
+      end = i + 1;
+    }
+    if (code === 46 /*.*/) {
+        // If this is our first dot, mark it as the start of our extension
+        if (startDot === -1)
+          startDot = i;
+        else if (preDotState !== 1)
+          preDotState = 1;
+    } else if (startDot !== -1) {
+      // We saw a non-dot and non-path separator before our dot, so we should
+      // have a good chance at having a non-empty extension
+      preDotState = -1;
+    }
+  }
+
+  if (startDot === -1 || end === -1 ||
+      // We saw a non-dot character immediately before the dot
+      preDotState === 0 ||
+      // The (right-most) trimmed path component is exactly '..'
+      preDotState === 1 && startDot === end - 1 && startDot === startPart + 1) {
+    return '';
+  }
+  return path.slice(startDot, end);
+};
+
+function filter (xs, f) {
+    if (xs.filter) return xs.filter(f);
+    var res = [];
+    for (var i = 0; i < xs.length; i++) {
+        if (f(xs[i], i, xs)) res.push(xs[i]);
+    }
+    return res;
+}
+
+// String.prototype.substr - negative index don't work in IE8
+var substr = 'ab'.substr(-1) === 'b'
+    ? function (str, start, len) { return str.substr(start, len) }
+    : function (str, start, len) {
+        if (start < 0) start = str.length + start;
+        return str.substr(start, len);
+    }
+;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 8)))
+
+/***/ }),
+/* 10 */
+/*!************************************!*\
+  !*** D:/UR/uniapp/uni-app/.env.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(process) {;
+(function () {
+  var NODE_ENV = 'dev'; // dev:开发环境 | test:测试环境
+  var ENV_VAR = null;
+
+
+  if (true) {
+    if (NODE_ENV === 'dev') {
+      ENV_VAR = __webpack_require__(/*! .env.dev.js */ 11);
+    } else if (NODE_ENV === 'test') {
+
+    }
+  } else {}
+  if (ENV_VAR) {
+    process.uniEnv = {};
+    for (var key in ENV_VAR) {
+      process.uniEnv[key] = ENV_VAR[key];
+    }
+  }
+})();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../HBuilderX.2.9.8.20201110.full/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 8)))
+
+/***/ }),
+/* 11 */
+/*!****************************************!*\
+  !*** D:/UR/uniapp/uni-app/.env.dev.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var UNI_APP = {
+  BASE_API: ' https://www.easy-mock.com/mock/5ed886f78afb710bec775060/shop' };
+
+module.exports = UNI_APP;
+
+/***/ }),
+/* 12 */,
+/* 13 */,
+/* 14 */
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js ***!
+  \**********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode, /* vue-cli only */
+  components, // fixed by xxxxxx auto components
+  renderjs // fixed by xxxxxx renderjs
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // fixed by xxxxxx auto components
+  if (components) {
+    if (!options.components) {
+      options.components = {}
+    }
+    var hasOwn = Object.prototype.hasOwnProperty
+    for (var name in components) {
+      if (hasOwn.call(components, name) && !hasOwn.call(options.components, name)) {
+        options.components[name] = components[name]
+      }
+    }
+  }
+  // fixed by xxxxxx renderjs
+  if (renderjs) {
+    (renderjs.beforeCreate || (renderjs.beforeCreate = [])).unshift(function() {
+      this[renderjs.__module] = this
+    });
+    (options.mixins || (options.mixins = [])).push(renderjs)
+  }
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+/* 15 */
+/*!***************************************!*\
+  !*** D:/UR/uniapp/uni-app/api/api.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process, uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.myHttp = void 0;function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;} // 全局请求路径，也就是后端的请求基准路径
+var BASE_URL = process.uniEnv.BASE_API;
+
+// 同时发送异步代码的次数，防止一次点击中有多次请求，用于处理
+var ajaxTimes = 0;
+
+// 封装请求方法，并向外暴露该方法
+var myHttp = function myHttp(options) {
+  // 解构请求头参数
+
+  var header = _objectSpread({}, options.header);
+
+
+  // 当前请求不是登录时请求，在header中加上后端返回的token
+  if (options.url != 'login') {
+    header["client-identity"] = uni.getStorageSync('session_id');
+  }
+
+  ajaxTimes++;
+  // 显示加载中 效果
+  // uni.showLoading({
+  // 	title: "加载中",
+  //     mask: true,
+  // });
+
+  return new Promise(function (resolve, reject) {
+    uni.request({
+      url: BASE_URL + options.url,
+      method: options.method || 'POST',
+      data: options.data || {},
+      header: header,
+      // 成功回调
+      success: function success(res) {
+        if (res.statusCode == "404") {
+          return uni.showLoading({ title: "404", mask: true });
+        }
+        resolve(res);
+      },
+      // 失败回调
+      fail: function fail(err) {
+        reject(err);
+      },
+
+      // 完成之后关闭加载效果
+      complete: function complete() {
+        console.log('complete');
+
+        ajaxTimes--;
+        if (ajaxTimes === 0) {
+          //  关闭正在等待的图标
+          setTimeout(function () {
+            uni.hideLoading();
+          }, 3000);
+
+        }
+      } });
+
+  });
+};exports.myHttp = myHttp;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../HBuilderX.2.9.8.20201110.full/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 8), __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 16 */
+/*!***********************************************************!*\
+  !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/index.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+var _mixin = _interopRequireDefault(__webpack_require__(/*! ./libs/mixin/mixin.js */ 17));
+
+
+
+var _request = _interopRequireDefault(__webpack_require__(/*! ./libs/request */ 18));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _queryParams = _interopRequireDefault(__webpack_require__(/*! ./libs/function/queryParams.js */ 22));
+
+var _route = _interopRequireDefault(__webpack_require__(/*! ./libs/function/route.js */ 23));
+
+var _timeFormat = _interopRequireDefault(__webpack_require__(/*! ./libs/function/timeFormat.js */ 27));
+
+var _timeFrom = _interopRequireDefault(__webpack_require__(/*! ./libs/function/timeFrom.js */ 28));
+
+var _colorGradient = _interopRequireDefault(__webpack_require__(/*! ./libs/function/colorGradient.js */ 29));
+
+var _guid = _interopRequireDefault(__webpack_require__(/*! ./libs/function/guid.js */ 30));
+
+var _color = _interopRequireDefault(__webpack_require__(/*! ./libs/function/color.js */ 31));
+
+var _type2icon = _interopRequireDefault(__webpack_require__(/*! ./libs/function/type2icon.js */ 32));
+
+var _randomArray = _interopRequireDefault(__webpack_require__(/*! ./libs/function/randomArray.js */ 33));
+
+var _deepClone = _interopRequireDefault(__webpack_require__(/*! ./libs/function/deepClone.js */ 20));
+
+var _deepMerge = _interopRequireDefault(__webpack_require__(/*! ./libs/function/deepMerge.js */ 19));
+
+var _addUnit = _interopRequireDefault(__webpack_require__(/*! ./libs/function/addUnit.js */ 34));
+
+
+var _test = _interopRequireDefault(__webpack_require__(/*! ./libs/function/test.js */ 21));
+
+var _random = _interopRequireDefault(__webpack_require__(/*! ./libs/function/random.js */ 35));
+
+var _trim = _interopRequireDefault(__webpack_require__(/*! ./libs/function/trim.js */ 36));
+
+var _toast = _interopRequireDefault(__webpack_require__(/*! ./libs/function/toast.js */ 37));
+
+var _getParent = _interopRequireDefault(__webpack_require__(/*! ./libs/function/getParent.js */ 38));
+
+var _$parent = _interopRequireDefault(__webpack_require__(/*! ./libs/function/$parent.js */ 39));
+
+
+
+var _sys = __webpack_require__(/*! ./libs/function/sys.js */ 40);
+
+var _debounce = _interopRequireDefault(__webpack_require__(/*! ./libs/function/debounce.js */ 41));
+
+var _throttle = _interopRequireDefault(__webpack_require__(/*! ./libs/function/throttle.js */ 42));
+
+
+
+var _config = _interopRequireDefault(__webpack_require__(/*! ./libs/config/config.js */ 43));
+
+var _zIndex = _interopRequireDefault(__webpack_require__(/*! ./libs/config/zIndex.js */ 44));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // 引入全局mixin
+// 引入关于是否mixin集成小程序分享的配置
+// import wxshare from './libs/mixin/mpShare.js'
+// 全局挂载引入http相关请求拦截插件
+function wranning(str) {// 开发环境进行信息输出,主要是一些报错信息
+  // 这个环境的来由是在程序编写时候,点击hx编辑器运行调试代码的时候,详见:
+  // 	https://uniapp.dcloud.io/frame?id=%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e5%92%8c%e7%94%9f%e4%ba%a7%e7%8e%af%e5%a2%83
+  if (true) {console.warn(str);}} // 尝试判断在根目录的/store中是否有$u.mixin.js，此文件uView默认为需要挂在到全局的vuex的state变量
+// HX2.6.11版本,放到try中,控制台依然会警告,暂时不用此方式，
+// let vuexStore = {};
+// try {
+// 	vuexStore = require("@/store/$u.mixin.js");
+// } catch (e) {
+// 	//TODO handle the exception
+// }
+// post类型对象参数转为get类型url参数
+var $u = { queryParams: _queryParams.default, route: _route.default, timeFormat: _timeFormat.default, date: _timeFormat.default, // 另名date
+  timeFrom: _timeFrom.default, colorGradient: _colorGradient.default.colorGradient, colorToRgba: _colorGradient.default.colorToRgba, guid: _guid.default, color: _color.default, sys: _sys.sys, os: _sys.os, type2icon: _type2icon.default, randomArray: _randomArray.default, wranning: wranning, get: _request.default.get,
+  post: _request.default.post,
+  put: _request.default.put,
+  'delete': _request.default.delete,
+  hexToRgb: _colorGradient.default.hexToRgb,
+  rgbToHex: _colorGradient.default.rgbToHex,
+  test: _test.default,
+  random: _random.default,
+  deepClone: _deepClone.default,
+  deepMerge: _deepMerge.default,
+  getParent: _getParent.default,
+  $parent: _$parent.default,
+  addUnit: _addUnit.default,
+  trim: _trim.default,
+  type: ['primary', 'success', 'error', 'warning', 'info'],
+  http: _request.default,
+  toast: _toast.default,
+  config: _config.default, // uView配置信息相关，比如版本号
+  zIndex: _zIndex.default,
+  debounce: _debounce.default,
+  throttle: _throttle.default };
+
+
+// $u挂载到uni对象上
+uni.$u = $u;
+
+var install = function install(Vue) {
+  Vue.mixin(_mixin.default);
+  if (Vue.prototype.openShare) {
+    Vue.mixin(mpShare);
+  }
+  // Vue.mixin(vuexStore);
+  // 时间格式化，同时两个名称，date和timeFormat
+  Vue.filter('timeFormat', function (timestamp, format) {
+    return (0, _timeFormat.default)(timestamp, format);
+  });
+  Vue.filter('date', function (timestamp, format) {
+    return (0, _timeFormat.default)(timestamp, format);
+  });
+  // 将多久以前的方法，注入到全局过滤器
+  Vue.filter('timeFrom', function (timestamp, format) {
+    return (0, _timeFrom.default)(timestamp, format);
+  });
+  Vue.prototype.$u = $u;
+};var _default =
+
+{
+  install: install };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 17 */
+/*!**********************************************************************!*\
+  !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/mixin/mixin.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(uni) {module.exports = {
+  data: function data() {
+    return {};
+  },
+  onLoad: function onLoad() {
+    // getRect挂载到$u上，因为这方法需要使用in(this)，所以无法把它独立成一个单独的文件导出
+    this.$u.getRect = this.$uGetRect;
+  },
+  methods: {
+    // 查询节点信息
+    // 目前此方法在支付宝小程序中无法获取组件跟接点的尺寸，为支付宝的bug(2020-07-21)
+    // 解决办法为在组件根部再套一个没有任何作用的view元素
+    $uGetRect: function $uGetRect(selector, all) {var _this = this;
+      return new Promise(function (resolve) {
+        uni.createSelectorQuery().
+        in(_this)[all ? 'selectAll' : 'select'](selector).
+        boundingClientRect(function (rect) {
+          if (all && Array.isArray(rect) && rect.length) {
+            resolve(rect);
+          }
+          if (!all && rect) {
+            resolve(rect);
+          }
+        }).
+        exec();
+      });
+    },
+    getParentData: function getParentData() {var _this2 = this;var parentName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+      // 避免在created中去定义parent变量
+      if (!this.parent) this.parent = false;
+      // 这里的本质原理是，通过获取父组件实例(也即u-radio-group的this)
+      // 将父组件this中对应的参数，赋值给本组件(u-radio的this)的parentData对象中对应的属性
+      // 之所以需要这么做，是因为所有端中，头条小程序不支持通过this.parent.xxx去监听父组件参数的变化
+      this.parent = this.$u.$parent.call(this, parentName);
+      if (this.parent) {
+        // 历遍parentData中的属性，将parent中的同名属性赋值给parentData
+        Object.keys(this.parentData).map(function (key) {
+          _this2.parentData[key] = _this2.parent[key];
+        });
+      }
+    },
+    // 阻止事件冒泡
+    preventEvent: function preventEvent(e) {
+      e && e.stopPropagation && e.stopPropagation();
+    } },
+
+  onReachBottom: function onReachBottom() {
+    uni.$emit('uOnReachBottom');
+  } };
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 18 */
+/*!************************************************************************!*\
+  !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/request/index.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _deepMerge = _interopRequireDefault(__webpack_require__(/*! ../function/deepMerge */ 19));
+var _test = _interopRequireDefault(__webpack_require__(/*! ../function/test */ 21));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var
+Request = /*#__PURE__*/function () {_createClass(Request, [{ key: "setConfig",
+    // 设置全局默认配置
+    value: function setConfig(customConfig) {
+      // 深度合并对象，否则会造成对象深层属性丢失
+      this.config = (0, _deepMerge.default)(this.config, customConfig);
+    }
+
+    // 主要请求部分
+  }, { key: "request", value: function request() {var _this = this;var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      // 检查请求拦截
+      if (this.interceptor.request && typeof this.interceptor.request === 'function') {
+        var tmpConfig = {};
+        var interceptorRequest = this.interceptor.request(options);
+        if (interceptorRequest === false) {
+          // 返回一个处于pending状态中的Promise，来取消原promise，避免进入then()回调
+          return new Promise(function () {});
+        }
+        this.options = interceptorRequest;
+      }
+      options.dataType = options.dataType || this.config.dataType;
+      options.responseType = options.responseType || this.config.responseType;
+      options.url = options.url || '';
+      options.params = options.params || {};
+      options.header = Object.assign(this.config.header, options.header);
+      options.method = options.method || this.config.method;
+
+      return new Promise(function (resolve, reject) {
+        options.complete = function (response) {
+          // 请求返回后，隐藏loading(如果请求返回快的话，可能会没有loading)
+          uni.hideLoading();
+          // 清除定时器，如果请求回来了，就无需loading
+          clearTimeout(_this.config.timer);
+          _this.config.timer = null;
+          // 判断用户对拦截返回数据的要求，如果originalData为true，返回所有的数据(response)到拦截器，否则只返回response.data
+          if (_this.config.originalData) {
+            // 判断是否存在拦截器
+            if (_this.interceptor.response && typeof _this.interceptor.response === 'function') {
+              var resInterceptors = _this.interceptor.response(response);
+              // 如果拦截器不返回false，就将拦截器返回的内容给this.$u.post的then回调
+              if (resInterceptors !== false) {
+                resolve(resInterceptors);
+              } else {
+                // 如果拦截器返回false，意味着拦截器定义者认为返回有问题，直接接入catch回调
+                reject(response);
+              }
+            } else {
+              // 如果要求返回原始数据，就算没有拦截器，也返回最原始的数据
+              resolve(response);
+            }
+          } else {
+            if (response.statusCode == 200) {
+              if (_this.interceptor.response && typeof _this.interceptor.response === 'function') {
+                var _resInterceptors = _this.interceptor.response(response.data);
+                if (_resInterceptors !== false) {
+                  resolve(_resInterceptors);
+                } else {
+                  reject(response.data);
+                }
+              } else {
+                // 如果不是返回原始数据(originalData=false)，且没有拦截器的情况下，返回纯数据给then回调
+                resolve(response.data);
+              }
+            } else {
+              // 不返回原始数据的情况下，服务器状态码不为200，modal弹框提示
+              // if(response.errMsg) {
+              // 	uni.showModal({
+              // 		title: response.errMsg
+              // 	});
+              // }
+              reject(response);
+            }
+          }
+        };
+
+        // 判断用户传递的URL是否/开头,如果不是,加上/，这里使用了uView的test.js验证库的url()方法
+        options.url = _test.default.url(options.url) ? options.url : _this.config.baseUrl + (options.url.indexOf('/') == 0 ?
+        options.url : '/' + options.url);
+
+        // 是否显示loading
+        // 加一个是否已有timer定时器的判断，否则有两个同时请求的时候，后者会清除前者的定时器id
+        // 而没有清除前者的定时器，导致前者超时，一直显示loading
+        if (_this.config.showLoading && !_this.config.timer) {
+          _this.config.timer = setTimeout(function () {
+            uni.showLoading({
+              title: _this.config.loadingText,
+              mask: _this.config.loadingMask });
+
+            _this.config.timer = null;
+          }, _this.config.loadingTime);
+        }
+        uni.request(options);
+      });
+      // .catch(res => {
+      // 	// 如果返回reject()，不让其进入this.$u.post().then().catch()后面的catct()
+      // 	// 因为很多人都会忘了写后面的catch()，导致报错捕获不到catch
+      // 	return new Promise(()=>{});
+      // })
+    } }]);
+
+  function Request() {var _this2 = this;_classCallCheck(this, Request);
+    this.config = {
+      baseUrl: '', // 请求的根域名
+      // 默认的请求头
+      header: {},
+      method: 'POST',
+      // 设置为json，返回后uni.request会对数据进行一次JSON.parse
+      dataType: 'json',
+      // 此参数无需处理，因为5+和支付宝小程序不支持，默认为text即可
+      responseType: 'text',
+      showLoading: true, // 是否显示请求中的loading
+      loadingText: '请求中...',
+      loadingTime: 800, // 在此时间内，请求还没回来的话，就显示加载中动画，单位ms
+      timer: null, // 定时器
+      originalData: false, // 是否在拦截器中返回服务端的原始数据，见文档说明
+      loadingMask: true // 展示loading的时候，是否给一个透明的蒙层，防止触摸穿透
+    };
+
+    // 拦截器
+    this.interceptor = {
+      // 请求前的拦截
+      request: null,
+      // 请求后的拦截
+      response: null };
+
+
+    // get请求
+    this.get = function (url) {var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var header = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+      return _this2.request({
+        method: 'GET',
+        url: url,
+        header: header,
+        data: data });
+
+    };
+
+    // post请求
+    this.post = function (url) {var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var header = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+      return _this2.request({
+        url: url,
+        method: 'POST',
+        header: header,
+        data: data });
+
+    };
+
+    // put请求，不支持支付宝小程序(HX2.6.15)
+    this.put = function (url) {var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var header = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+      return _this2.request({
+        url: url,
+        method: 'PUT',
+        header: header,
+        data: data });
+
+    };
+
+    // delete请求，不支持支付宝和头条小程序(HX2.6.15)
+    this.delete = function (url) {var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var header = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+      return _this2.request({
+        url: url,
+        method: 'DELETE',
+        header: header,
+        data: data });
+
+    };
+  }return Request;}();var _default =
+
+new Request();exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 19 */
+/*!*****************************************************************************!*\
+  !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/deepMerge.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _deepClone = _interopRequireDefault(__webpack_require__(/*! ./deepClone */ 20));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+// JS对象深度合并
+function deepMerge() {var target = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};var source = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  target = (0, _deepClone.default)(target);
+  if (typeof target !== 'object' || typeof source !== 'object') return false;
+  for (var prop in source) {
+    if (!source.hasOwnProperty(prop)) continue;
+    if (prop in target) {
+      if (typeof target[prop] !== 'object') {
+        target[prop] = source[prop];
+      } else {
+        if (typeof source[prop] !== 'object') {
+          target[prop] = source[prop];
+        } else {
+          if (target[prop].concat && source[prop].concat) {
+            target[prop] = target[prop].concat(source[prop]);
+          } else {
+            target[prop] = deepMerge(target[prop], source[prop]);
+          }
+        }
+      }
+    } else {
+      target[prop] = source[prop];
+    }
+  }
+  return target;
+}var _default =
+
+deepMerge;exports.default = _default;
+
+/***/ }),
+/* 20 */
 /*!*****************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/deepClone.js ***!
   \*****************************************************************************/
@@ -8565,150 +8957,7 @@ function deepClone(obj) {
 deepClone;exports.default = _default;
 
 /***/ }),
-
-/***/ 203:
-/*!*********************************************************************************!*\
-  !*** D:/UR/uniapp/uni-app/node_modules/@dcloudio/uni-ui/lib/uni-icons/icons.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  "pulldown": "\uE588",
-  "refreshempty": "\uE461",
-  "back": "\uE471",
-  "forward": "\uE470",
-  "more": "\uE507",
-  "more-filled": "\uE537",
-  "scan": "\uE612",
-  "qq": "\uE264",
-  "weibo": "\uE260",
-  "weixin": "\uE261",
-  "pengyouquan": "\uE262",
-  "loop": "\uE565",
-  "refresh": "\uE407",
-  "refresh-filled": "\uE437",
-  "arrowthindown": "\uE585",
-  "arrowthinleft": "\uE586",
-  "arrowthinright": "\uE587",
-  "arrowthinup": "\uE584",
-  "undo-filled": "\uE7D6",
-  "undo": "\uE406",
-  "redo": "\uE405",
-  "redo-filled": "\uE7D9",
-  "bars": "\uE563",
-  "chatboxes": "\uE203",
-  "camera": "\uE301",
-  "chatboxes-filled": "\uE233",
-  "camera-filled": "\uE7EF",
-  "cart-filled": "\uE7F4",
-  "cart": "\uE7F5",
-  "checkbox-filled": "\uE442",
-  "checkbox": "\uE7FA",
-  "arrowleft": "\uE582",
-  "arrowdown": "\uE581",
-  "arrowright": "\uE583",
-  "smallcircle-filled": "\uE801",
-  "arrowup": "\uE580",
-  "circle": "\uE411",
-  "eye-filled": "\uE568",
-  "eye-slash-filled": "\uE822",
-  "eye-slash": "\uE823",
-  "eye": "\uE824",
-  "flag-filled": "\uE825",
-  "flag": "\uE508",
-  "gear-filled": "\uE532",
-  "reload": "\uE462",
-  "gear": "\uE502",
-  "hand-thumbsdown-filled": "\uE83B",
-  "hand-thumbsdown": "\uE83C",
-  "hand-thumbsup-filled": "\uE83D",
-  "heart-filled": "\uE83E",
-  "hand-thumbsup": "\uE83F",
-  "heart": "\uE840",
-  "home": "\uE500",
-  "info": "\uE504",
-  "home-filled": "\uE530",
-  "info-filled": "\uE534",
-  "circle-filled": "\uE441",
-  "chat-filled": "\uE847",
-  "chat": "\uE263",
-  "mail-open-filled": "\uE84D",
-  "email-filled": "\uE231",
-  "mail-open": "\uE84E",
-  "email": "\uE201",
-  "checkmarkempty": "\uE472",
-  "list": "\uE562",
-  "locked-filled": "\uE856",
-  "locked": "\uE506",
-  "map-filled": "\uE85C",
-  "map-pin": "\uE85E",
-  "map-pin-ellipse": "\uE864",
-  "map": "\uE364",
-  "minus-filled": "\uE440",
-  "mic-filled": "\uE332",
-  "minus": "\uE410",
-  "micoff": "\uE360",
-  "mic": "\uE302",
-  "clear": "\uE434",
-  "smallcircle": "\uE868",
-  "close": "\uE404",
-  "closeempty": "\uE460",
-  "paperclip": "\uE567",
-  "paperplane": "\uE503",
-  "paperplane-filled": "\uE86E",
-  "person-filled": "\uE131",
-  "contact-filled": "\uE130",
-  "person": "\uE101",
-  "contact": "\uE100",
-  "images-filled": "\uE87A",
-  "phone": "\uE200",
-  "images": "\uE87B",
-  "image": "\uE363",
-  "image-filled": "\uE877",
-  "location-filled": "\uE333",
-  "location": "\uE303",
-  "plus-filled": "\uE439",
-  "plus": "\uE409",
-  "plusempty": "\uE468",
-  "help-filled": "\uE535",
-  "help": "\uE505",
-  "navigate-filled": "\uE884",
-  "navigate": "\uE501",
-  "mic-slash-filled": "\uE892",
-  "search": "\uE466",
-  "settings": "\uE560",
-  "sound": "\uE590",
-  "sound-filled": "\uE8A1",
-  "spinner-cycle": "\uE465",
-  "download-filled": "\uE8A4",
-  "personadd-filled": "\uE132",
-  "videocam-filled": "\uE8AF",
-  "personadd": "\uE102",
-  "upload": "\uE402",
-  "upload-filled": "\uE8B1",
-  "starhalf": "\uE463",
-  "star-filled": "\uE438",
-  "star": "\uE408",
-  "trash": "\uE401",
-  "phone-filled": "\uE230",
-  "compose": "\uE400",
-  "videocam": "\uE300",
-  "trash-filled": "\uE8DC",
-  "download": "\uE403",
-  "chatbubble-filled": "\uE232",
-  "chatbubble": "\uE202",
-  "cloud-download": "\uE8E4",
-  "cloud-upload-filled": "\uE8E5",
-  "cloud-upload": "\uE8E6",
-  "cloud-download-filled": "\uE8E9",
-  "headphones": "\uE8BF",
-  "shop": "\uE609" };exports.default = _default;
-
-/***/ }),
-
-/***/ 21:
+/* 21 */
 /*!************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/test.js ***!
   \************************************************************************/
@@ -8949,8 +9198,7 @@ function code(value) {var len = arguments.length > 1 && arguments[1] !== undefin
   code: code };exports.default = _default;
 
 /***/ }),
-
-/***/ 22:
+/* 22 */
 /*!*******************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/queryParams.js ***!
   \*******************************************************************************/
@@ -9018,8 +9266,7 @@ function queryParams() {var data = arguments.length > 0 && arguments[0] !== unde
 queryParams;exports.default = _default;
 
 /***/ }),
-
-/***/ 23:
+/* 23 */
 /*!*************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/route.js ***!
   \*************************************************************************/
@@ -9152,8 +9399,7 @@ new Router().route;exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-
-/***/ 24:
+/* 24 */
 /*!**********************************************************!*\
   !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
   \**********************************************************/
@@ -9163,8 +9409,7 @@ new Router().route;exports.default = _default;
 module.exports = __webpack_require__(/*! regenerator-runtime */ 25);
 
 /***/ }),
-
-/***/ 25:
+/* 25 */
 /*!************************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
   \************************************************************/
@@ -9211,8 +9456,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-
-/***/ 26:
+/* 26 */
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
   \*****************************************************/
@@ -9943,8 +10187,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-
-/***/ 27:
+/* 27 */
 /*!******************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/timeFormat.js ***!
   \******************************************************************************/
@@ -10005,8 +10248,7 @@ function timeFormat() {var dateTime = arguments.length > 0 && arguments[0] !== u
 timeFormat;exports.default = _default;
 
 /***/ }),
-
-/***/ 28:
+/* 28 */
 /*!****************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/timeFrom.js ***!
   \****************************************************************************/
@@ -10063,8 +10305,7 @@ function timeFrom() {var dateTime = arguments.length > 0 && arguments[0] !== und
 timeFrom;exports.default = _default;
 
 /***/ }),
-
-/***/ 29:
+/* 29 */
 /*!*********************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/colorGradient.js ***!
   \*********************************************************************************/
@@ -10207,39 +10448,7 @@ function colorToRgba(color) {var alpha = arguments.length > 1 && arguments[1] !=
   colorToRgba: colorToRgba };exports.default = _default;
 
 /***/ }),
-
-/***/ 3:
-/*!***********************************!*\
-  !*** (webpack)/buildin/global.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-
-/***/ 30:
+/* 30 */
 /*!************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/guid.js ***!
   \************************************************************************/
@@ -10290,8 +10499,7 @@ function guid() {var len = arguments.length > 0 && arguments[0] !== undefined ? 
 guid;exports.default = _default;
 
 /***/ }),
-
-/***/ 31:
+/* 31 */
 /*!*************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/color.js ***!
   \*************************************************************************/
@@ -10338,8 +10546,7 @@ var color = {
 color;exports.default = _default;
 
 /***/ }),
-
-/***/ 32:
+/* 32 */
 /*!*****************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/type2icon.js ***!
   \*****************************************************************************/
@@ -10384,8 +10591,7 @@ function type2icon() {var type = arguments.length > 0 && arguments[0] !== undefi
 type2icon;exports.default = _default;
 
 /***/ }),
-
-/***/ 33:
+/* 33 */
 /*!*******************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/randomArray.js ***!
   \*******************************************************************************/
@@ -10402,8 +10608,7 @@ function randomArray() {var array = arguments.length > 0 && arguments[0] !== und
 randomArray;exports.default = _default;
 
 /***/ }),
-
-/***/ 34:
+/* 34 */
 /*!***************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/addUnit.js ***!
   \***************************************************************************/
@@ -10421,8 +10626,7 @@ function addUnit() {var value = arguments.length > 0 && arguments[0] !== undefin
 }
 
 /***/ }),
-
-/***/ 35:
+/* 35 */
 /*!**************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/random.js ***!
   \**************************************************************************/
@@ -10442,8 +10646,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 random;exports.default = _default;
 
 /***/ }),
-
-/***/ 36:
+/* 36 */
 /*!************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/trim.js ***!
   \************************************************************************/
@@ -10468,8 +10671,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 trim;exports.default = _default;
 
 /***/ }),
-
-/***/ 37:
+/* 37 */
 /*!*************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/toast.js ***!
   \*************************************************************************/
@@ -10489,8 +10691,7 @@ toast;exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-
-/***/ 38:
+/* 38 */
 /*!*****************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/getParent.js ***!
   \*****************************************************************************/
@@ -10547,8 +10748,7 @@ function getParent(name, keys) {
 }
 
 /***/ }),
-
-/***/ 39:
+/* 39 */
 /*!***************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/$parent.js ***!
   \***************************************************************************/
@@ -10576,19 +10776,7 @@ function $parent() {var name = arguments.length > 0 && arguments[0] !== undefine
 }
 
 /***/ }),
-
-/***/ 4:
-/*!***************************************!*\
-  !*** D:/UR/uniapp/uni-app/pages.json ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ 40:
+/* 40 */
 /*!***********************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/sys.js ***!
   \***********************************************************************/
@@ -10606,8 +10794,7 @@ function sys() {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-
-/***/ 41:
+/* 41 */
 /*!****************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/debounce.js ***!
   \****************************************************************************/
@@ -10646,8 +10833,7 @@ function debounce(func) {var wait = arguments.length > 1 && arguments[1] !== und
 debounce;exports.default = _default;
 
 /***/ }),
-
-/***/ 42:
+/* 42 */
 /*!****************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/function/throttle.js ***!
   \****************************************************************************/
@@ -10689,8 +10875,7 @@ function throttle(func) {var wait = arguments.length > 1 && arguments[1] !== und
 throttle;exports.default = _default;
 
 /***/ }),
-
-/***/ 43:
+/* 43 */
 /*!************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/config/config.js ***!
   \************************************************************************/
@@ -10713,8 +10898,7 @@ var version = '1.8.2';var _default =
   'warning'] };exports.default = _default;
 
 /***/ }),
-
-/***/ 44:
+/* 44 */
 /*!************************************************************************!*\
   !*** D:/UR/uniapp/uni-app/node_modules/uview-ui/libs/config/zIndex.js ***!
   \************************************************************************/
@@ -10743,8 +10927,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   indexListSticky: 965 };exports.default = _default;
 
 /***/ }),
-
-/***/ 45:
+/* 45 */
 /*!*******************************************!*\
   !*** D:/UR/uniapp/uni-app/store/index.js ***!
   \*******************************************/
@@ -10765,8 +10948,7 @@ new _vuex.default.Store({ // export
     about: _about.default } });exports.default = _default;
 
 /***/ }),
-
-/***/ 46:
+/* 46 */
 /*!********************************************!*\
   !*** ./node_modules/vuex/dist/vuex.esm.js ***!
   \********************************************/
@@ -11878,8 +12060,7 @@ var index = {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ 3)))
 
 /***/ }),
-
-/***/ 47:
+/* 47 */
 /*!**************************************************!*\
   !*** D:/UR/uniapp/uni-app/store/modules/home.js ***!
   \**************************************************/
@@ -11913,8 +12094,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 homeModules;exports.default = _default;
 
 /***/ }),
-
-/***/ 48:
+/* 48 */
 /*!***************************************************!*\
   !*** D:/UR/uniapp/uni-app/store/modules/about.js ***!
   \***************************************************/
@@ -11924,8 +12104,13 @@ homeModules;exports.default = _default;
 
 
 /***/ }),
-
-/***/ 55:
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */
 /*!************************************************!*\
   !*** D:/UR/uniapp/uni-app/api/home/homeApi.js ***!
   \************************************************/
@@ -11941,366 +12126,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     return (0, _api.myHttp)({ url: '/api/bannerdata', method: 'GET', data: params });
   } };exports.default = _default;
 
-/***/ }),
-
-/***/ 8:
-/*!********************************************************!*\
-  !*** ./node_modules/node-libs-browser/mock/process.js ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports.nextTick = function nextTick(fn) {
-    var args = Array.prototype.slice.call(arguments);
-    args.shift();
-    setTimeout(function () {
-        fn.apply(null, args);
-    }, 0);
-};
-
-exports.platform = exports.arch = 
-exports.execPath = exports.title = 'browser';
-exports.pid = 1;
-exports.browser = true;
-exports.env = {};
-exports.argv = [];
-
-exports.binding = function (name) {
-	throw new Error('No such module. (Possibly not yet loaded)')
-};
-
-(function () {
-    var cwd = '/';
-    var path;
-    exports.cwd = function () { return cwd };
-    exports.chdir = function (dir) {
-        if (!path) path = __webpack_require__(/*! path */ 9);
-        cwd = path.resolve(dir, cwd);
-    };
-})();
-
-exports.exit = exports.kill = 
-exports.umask = exports.dlopen = 
-exports.uptime = exports.memoryUsage = 
-exports.uvCounters = function() {};
-exports.features = {};
-
-
-/***/ }),
-
-/***/ 9:
-/*!***********************************************!*\
-  !*** ./node_modules/path-browserify/index.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {// .dirname, .basename, and .extname methods are extracted from Node.js v8.11.1,
-// backported and transplited with Babel, with backwards-compat fixes
-
-// Copyright Joyent, Inc. and other Node contributors.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a
-// copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to permit
-// persons to whom the Software is furnished to do so, subject to the
-// following conditions:
-//
-// The above copyright notice and this permission notice shall be included
-// in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-// USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-// resolves . and .. elements in a path array with directory names there
-// must be no slashes, empty elements, or device names (c:\) in the array
-// (so also no leading and trailing slashes - it does not distinguish
-// relative and absolute paths)
-function normalizeArray(parts, allowAboveRoot) {
-  // if the path tries to go above the root, `up` ends up > 0
-  var up = 0;
-  for (var i = parts.length - 1; i >= 0; i--) {
-    var last = parts[i];
-    if (last === '.') {
-      parts.splice(i, 1);
-    } else if (last === '..') {
-      parts.splice(i, 1);
-      up++;
-    } else if (up) {
-      parts.splice(i, 1);
-      up--;
-    }
-  }
-
-  // if the path is allowed to go above the root, restore leading ..s
-  if (allowAboveRoot) {
-    for (; up--; up) {
-      parts.unshift('..');
-    }
-  }
-
-  return parts;
-}
-
-// path.resolve([from ...], to)
-// posix version
-exports.resolve = function() {
-  var resolvedPath = '',
-      resolvedAbsolute = false;
-
-  for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
-    var path = (i >= 0) ? arguments[i] : process.cwd();
-
-    // Skip empty and invalid entries
-    if (typeof path !== 'string') {
-      throw new TypeError('Arguments to path.resolve must be strings');
-    } else if (!path) {
-      continue;
-    }
-
-    resolvedPath = path + '/' + resolvedPath;
-    resolvedAbsolute = path.charAt(0) === '/';
-  }
-
-  // At this point the path should be resolved to a full absolute path, but
-  // handle relative paths to be safe (might happen when process.cwd() fails)
-
-  // Normalize the path
-  resolvedPath = normalizeArray(filter(resolvedPath.split('/'), function(p) {
-    return !!p;
-  }), !resolvedAbsolute).join('/');
-
-  return ((resolvedAbsolute ? '/' : '') + resolvedPath) || '.';
-};
-
-// path.normalize(path)
-// posix version
-exports.normalize = function(path) {
-  var isAbsolute = exports.isAbsolute(path),
-      trailingSlash = substr(path, -1) === '/';
-
-  // Normalize the path
-  path = normalizeArray(filter(path.split('/'), function(p) {
-    return !!p;
-  }), !isAbsolute).join('/');
-
-  if (!path && !isAbsolute) {
-    path = '.';
-  }
-  if (path && trailingSlash) {
-    path += '/';
-  }
-
-  return (isAbsolute ? '/' : '') + path;
-};
-
-// posix version
-exports.isAbsolute = function(path) {
-  return path.charAt(0) === '/';
-};
-
-// posix version
-exports.join = function() {
-  var paths = Array.prototype.slice.call(arguments, 0);
-  return exports.normalize(filter(paths, function(p, index) {
-    if (typeof p !== 'string') {
-      throw new TypeError('Arguments to path.join must be strings');
-    }
-    return p;
-  }).join('/'));
-};
-
-
-// path.relative(from, to)
-// posix version
-exports.relative = function(from, to) {
-  from = exports.resolve(from).substr(1);
-  to = exports.resolve(to).substr(1);
-
-  function trim(arr) {
-    var start = 0;
-    for (; start < arr.length; start++) {
-      if (arr[start] !== '') break;
-    }
-
-    var end = arr.length - 1;
-    for (; end >= 0; end--) {
-      if (arr[end] !== '') break;
-    }
-
-    if (start > end) return [];
-    return arr.slice(start, end - start + 1);
-  }
-
-  var fromParts = trim(from.split('/'));
-  var toParts = trim(to.split('/'));
-
-  var length = Math.min(fromParts.length, toParts.length);
-  var samePartsLength = length;
-  for (var i = 0; i < length; i++) {
-    if (fromParts[i] !== toParts[i]) {
-      samePartsLength = i;
-      break;
-    }
-  }
-
-  var outputParts = [];
-  for (var i = samePartsLength; i < fromParts.length; i++) {
-    outputParts.push('..');
-  }
-
-  outputParts = outputParts.concat(toParts.slice(samePartsLength));
-
-  return outputParts.join('/');
-};
-
-exports.sep = '/';
-exports.delimiter = ':';
-
-exports.dirname = function (path) {
-  if (typeof path !== 'string') path = path + '';
-  if (path.length === 0) return '.';
-  var code = path.charCodeAt(0);
-  var hasRoot = code === 47 /*/*/;
-  var end = -1;
-  var matchedSlash = true;
-  for (var i = path.length - 1; i >= 1; --i) {
-    code = path.charCodeAt(i);
-    if (code === 47 /*/*/) {
-        if (!matchedSlash) {
-          end = i;
-          break;
-        }
-      } else {
-      // We saw the first non-path separator
-      matchedSlash = false;
-    }
-  }
-
-  if (end === -1) return hasRoot ? '/' : '.';
-  if (hasRoot && end === 1) {
-    // return '//';
-    // Backwards-compat fix:
-    return '/';
-  }
-  return path.slice(0, end);
-};
-
-function basename(path) {
-  if (typeof path !== 'string') path = path + '';
-
-  var start = 0;
-  var end = -1;
-  var matchedSlash = true;
-  var i;
-
-  for (i = path.length - 1; i >= 0; --i) {
-    if (path.charCodeAt(i) === 47 /*/*/) {
-        // If we reached a path separator that was not part of a set of path
-        // separators at the end of the string, stop now
-        if (!matchedSlash) {
-          start = i + 1;
-          break;
-        }
-      } else if (end === -1) {
-      // We saw the first non-path separator, mark this as the end of our
-      // path component
-      matchedSlash = false;
-      end = i + 1;
-    }
-  }
-
-  if (end === -1) return '';
-  return path.slice(start, end);
-}
-
-// Uses a mixed approach for backwards-compatibility, as ext behavior changed
-// in new Node.js versions, so only basename() above is backported here
-exports.basename = function (path, ext) {
-  var f = basename(path);
-  if (ext && f.substr(-1 * ext.length) === ext) {
-    f = f.substr(0, f.length - ext.length);
-  }
-  return f;
-};
-
-exports.extname = function (path) {
-  if (typeof path !== 'string') path = path + '';
-  var startDot = -1;
-  var startPart = 0;
-  var end = -1;
-  var matchedSlash = true;
-  // Track the state of characters (if any) we see before our first dot and
-  // after any path separator we find
-  var preDotState = 0;
-  for (var i = path.length - 1; i >= 0; --i) {
-    var code = path.charCodeAt(i);
-    if (code === 47 /*/*/) {
-        // If we reached a path separator that was not part of a set of path
-        // separators at the end of the string, stop now
-        if (!matchedSlash) {
-          startPart = i + 1;
-          break;
-        }
-        continue;
-      }
-    if (end === -1) {
-      // We saw the first non-path separator, mark this as the end of our
-      // extension
-      matchedSlash = false;
-      end = i + 1;
-    }
-    if (code === 46 /*.*/) {
-        // If this is our first dot, mark it as the start of our extension
-        if (startDot === -1)
-          startDot = i;
-        else if (preDotState !== 1)
-          preDotState = 1;
-    } else if (startDot !== -1) {
-      // We saw a non-dot and non-path separator before our dot, so we should
-      // have a good chance at having a non-empty extension
-      preDotState = -1;
-    }
-  }
-
-  if (startDot === -1 || end === -1 ||
-      // We saw a non-dot character immediately before the dot
-      preDotState === 0 ||
-      // The (right-most) trimmed path component is exactly '..'
-      preDotState === 1 && startDot === end - 1 && startDot === startPart + 1) {
-    return '';
-  }
-  return path.slice(startDot, end);
-};
-
-function filter (xs, f) {
-    if (xs.filter) return xs.filter(f);
-    var res = [];
-    for (var i = 0; i < xs.length; i++) {
-        if (f(xs[i], i, xs)) res.push(xs[i]);
-    }
-    return res;
-}
-
-// String.prototype.substr - negative index don't work in IE8
-var substr = 'ab'.substr(-1) === 'b'
-    ? function (str, start, len) { return str.substr(start, len) }
-    : function (str, start, len) {
-        if (start < 0) start = str.length + start;
-        return str.substr(start, len);
-    }
-;
-
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 8)))
-
 /***/ })
-
-}]);
+]]);
 //# sourceMappingURL=../../.sourcemap/mp-weixin/common/vendor.js.map

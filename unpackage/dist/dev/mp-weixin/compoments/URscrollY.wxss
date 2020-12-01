@@ -5,7 +5,7 @@
 }
 .card{
 	display: inline-block;
-	margin-left: 20rpx;
+	margin-right: 20rpx;
 }
 .card-box{
 	display: -webkit-box;
@@ -19,6 +19,8 @@
 .card-img{
 	width:200rpx;
 	height:270rpx;
+	-webkit-border-radius: 10rpx;
+	        border-radius: 10rpx;
 }
 .card-name{
 	width:200rpx;

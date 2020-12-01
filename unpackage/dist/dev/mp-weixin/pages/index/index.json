@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "meituan",
-  "usingComponents": {
-    "search": "/pages/index/commonents/search",
-    "title": "/pages/index/commonents/title",
-    "preference": "/pages/index/commonents/preference",
-    "delicacy": "/pages/index/commonents/delicacy"
-  }
-}

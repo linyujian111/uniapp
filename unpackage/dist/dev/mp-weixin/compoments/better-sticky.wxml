@@ -1,1 +1,0 @@
-<view class="tui-sticky-class"><view class="{{['tui-sticky-header',isFixed===true?'tui-sticky-fixed':'']}}" style="{{'transform:'+(transform)+';'+('webkit-transform:'+(transform)+';')}}"><slot name="header"></slot></view><block wx:if="{{isFixed}}"><view style="{{'height:'+(holderHeight+'px')+';'}}"></view></block><slot name="content"></slot></view>

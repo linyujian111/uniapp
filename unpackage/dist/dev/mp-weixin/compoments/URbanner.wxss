@@ -25,12 +25,6 @@
 /* 透明度 */
 /* 文章场景相关 */
 /* uni.scss */
-.wrap.data-v-458374b6 {
-  padding: 0rpx;
-}
-.banner.data-v-458374b6 {
-  margin-bottom: 15rpx;
-}
 .data-v-458374b6 uni-swiper .uni-swiper-wrapper {
   background-color: white !important;
 }

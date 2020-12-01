@@ -22,8 +22,9 @@
 	.page{
 		width:100%;
 		height: 100%;
-		background-color: white;
+		background-color:$u-type-info-light;
 		position: absolute;
+		overflow: auto;
 	}
 	
 	.page-block{
