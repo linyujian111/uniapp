@@ -56,7 +56,7 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "详情页",
-                "enablePullDownRefresh": false
+                "enablePullDownRefresh": true
             }
             
         }

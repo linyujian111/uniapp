@@ -11,13 +11,13 @@
 			console.log('App Launch')
 		},
 		onShow: function() {
-			consol.log('App Show')
+			console.log('App Show')
 		},
 		onHide: function() {
 			console.log('App Hide')
 		},
 		onError:function(error){
-			console.log('App Error'+error)
+			console.log('报错了，报错提示为:'+error)
 		}
 	}
 </script>

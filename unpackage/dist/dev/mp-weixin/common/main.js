@@ -123,13 +123,13 @@ __webpack_require__(/*! .env.js */ 10);var _default =
     console.log('App Launch');
   },
   onShow: function onShow() {
-    consol.log('App Show');
+    console.log('App Show');
   },
   onHide: function onHide() {
     console.log('App Hide');
   },
   onError: function onError(error) {
-    console.log('App Error' + error);
+    console.log('报错了，报错提示为:' + error);
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../HBuilderX.2.9.8.20201110.full/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 8)))
 

@@ -41,7 +41,7 @@
 			图片
 		<image mode='aspectFill' src="http://www.nczwz.com/public/Home/images/bg/error-bg.jpg"></image>
 		<image mode="scaleToFill" src="http://www.nczwz.com/public/Home/images/bg/error-bg.jpg"></image>
-		<image mode src="http://www.nczwz.com/public/Home/images/bg/error-bg.jpg"></image>
+		<image  src="http://www.nczwz.com/public/Home/images/bg/error-bg.jpg"></image>
 		
 		</view>
 		
@@ -78,16 +78,48 @@
 		// 页面生命周期
 		
 		// 监听页面加载,其参数为上一个页面传递的参数,参数类型为object(用于页面传参)
-		onLoad(){},
+		onLoad(options){
+			console.log('onLoad： 页面加载')
+			console.log(options)
+			
+			
+		},
 		
 		// 监听页面先死,页面每次出现在屏幕上都触发,包括下级页面点返回露出当前页面
-		onShow(){},
+		onShow(){
+			console.log('onShow：页面显示')
+		},
 		
 		//监听页面初次渲染完成
-		onReady(){},
+		onReady(){
+			console.log('onReady：页面初次渲染完成')
+		},
 		//监听页面隐藏
-		onHide(){},
-	
+		onHide(){
+			console.log('onHide：页面隐藏')
+		},
+		
+		onUnload(){
+			console.log('onUnload：页面卸载')
+		},
+		
+		created(){
+			console.log('created')
+		},
+		
+		mounted(){
+			console.log('mounted')
+		},
+		onResize() {
+			console.log('onPullDownRefresh: 页面窗口尺寸')
+		},
+		onPullDownRefresh() {
+			console.log('onPullDownRefresh: 页面下拉刷新')
+			
+			setTimeout(()=>{
+				uni.stopPullDownRefresh()
+			},1000)
+		},
 		methods: {
 			goto(e){
 				console.log(e)
