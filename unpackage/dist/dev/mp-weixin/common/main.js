@@ -119,14 +119,17 @@ __webpack_require__(/*! .env.js */ 10);var _default =
 
 
   onLaunch: function onLaunch() {
-    console.log(process.uniEnv);
+    // console.log(process.uniEnv)
     console.log('App Launch');
   },
   onShow: function onShow() {
-    console.log('App Show');
+    consol.log('App Show');
   },
   onHide: function onHide() {
     console.log('App Hide');
+  },
+  onError: function onError(error) {
+    console.log('App Error' + error);
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../HBuilderX.2.9.8.20201110.full/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 8)))
 

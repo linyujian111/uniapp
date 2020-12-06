@@ -3,19 +3,24 @@
     "pages/home",
     "pages/my",
     "pages/category",
-    "pages/car"
+    "pages/car",
+    "pages/detail/detail"
   ],
   "subPackages": [],
   "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "meituan",
     "navigationBarBackgroundColor": "#FFFFFF",
-    "backgroundColor": "#FFFFFF"
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "UR",
+    "backgroundColor": "#FFFFFF",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
   },
   "tabBar": {
-    "color": "#999999",
-    "selectedColor": "#333333",
+    "color": "#C0C0C0",
+    "selectedColor": "#2979FF",
     "backgroundColor": "white",
+    "borderStyle": "black",
+    "position": "top",
     "list": [
       {
         "pagePath": "pages/home",

@@ -16,9 +16,11 @@
 			"path": "pages/home",
 			"style": {
 				"navigationBarTitleText": "首页",
-				"enablePullDownRefresh": false,
-				"usingComponents": {
-					
+				"usingComponents": {},
+				"h5":{
+					"pullToRefresh":{
+						"color":"#4CD964"
+					}
 				}
 				 
 			}
@@ -49,17 +51,42 @@
 
 	    
         
+        ,{
+            "path" : "pages/detail/detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "详情页",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
+	
+	
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "meituan",
-		"navigationBarBackgroundColor": "#FFFFFF",
-		"backgroundColor": "#FFFFFF"
+		//导航栏背景色
+		"navigationBarBackgroundColor":"#FFFFFF",  
+		
+		//导航栏字体颜色
+		"navigationBarTextStyle": "black",  
+		
+		// 导航栏标题内容
+		"navigationBarTitleText": "UR",
+	
+		"backgroundColor": "#FFFFFF",
+		
+		"enablePullDownRefresh":true,
+		
+		"backgroundTextStyle":"dark"
 	},
+	
 	"tabBar": {
-		"color": "#999999",
-		"selectedColor": "#333333",
+		"color": "#C0C0C0",
+		"selectedColor": "#2979FF",
 		"backgroundColor": "white",
+		"borderStyle":"black",  //h5无效
+		"position":"top",
+		//至少包含2个
 		"list": [{
 				"pagePath": "pages/home",
 				"iconPath": "static/images/home1.png",
@@ -83,6 +110,15 @@
 			}
 
 		]
+	},
+	
+	// 配置启动模式
+	"condition":{
+		"current":0,
+		"list":[{
+			"name":"详情页",
+			"path":"pages/detail/detail",
+			"query":"id=80"
+		}]
 	}
-
 }
