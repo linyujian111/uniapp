@@ -9,5 +9,10 @@ export default new Vuex.Store({ // export
     modules: {
         home,
         about
-    }
+    },
+	state: {
+	    num: 0,
+		name:'nihao',
+		name1:'nha22'
+	},
 })
