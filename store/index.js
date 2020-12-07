@@ -12,7 +12,6 @@ export default new Vuex.Store({ // export
     },
 	state: {
 	    num: 0,
-		name:'nihao',
-		name1:'nha22'
+		name:'nihao'
 	},
 })
